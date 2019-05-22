@@ -1,22 +1,18 @@
-/**
- * @class ExampleComponent
- */
-
 import * as React from 'react'
 
 import styles from './styles.css'
 
-export type Props = { text: string }
+export type Props = { data: string }
 
-export default class ExampleComponent extends React.Component<Props> {
+export default class MuiTable extends React.Component<Props> {
   render() {
     const {
-      text
+      data
     } = this.props
 
     return (
       <div className={styles.test}>
-        Example Component: {text}
+        Example Component: {data}
       </div>
     )
   }
