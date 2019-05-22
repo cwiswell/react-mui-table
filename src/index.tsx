@@ -1,6 +1,12 @@
 import * as React from 'react'
 
-import styles from './styles.css'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+//import styles from './styles.css'
 
 export type Props = { data: string }
 
@@ -11,9 +17,22 @@ export default class MuiTable extends React.Component<Props> {
     } = this.props
 
     return (
-      <div className={styles.test}>
-        Example Component: {data}
-      </div>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              Temp Data
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+            <TableRow>
+              <TableCell>
+                {data}
+              </TableCell>
+            </TableRow>
+        </TableBody>
+      </Table>
     )
   }
 }
