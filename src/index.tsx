@@ -4,7 +4,8 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import TableHeader from './tableHeader';
+import MuiTableHeader from './tableHeader';
+import MuiTableFooter from './tableFooter';
 
 //import styles from './styles.css'
 
@@ -18,7 +19,7 @@ export default class MuiTable extends React.Component<Props> {
 
     return (
       <Table>
-        <TableHeader data={data}/>
+        <MuiTableHeader data={data}/>
         <TableBody>
             <TableRow>
               <TableCell>
@@ -26,6 +27,9 @@ export default class MuiTable extends React.Component<Props> {
               </TableCell>
             </TableRow>
         </TableBody>
+        <MuiTableFooter count={300} rowsPerPage={30} currentPage={1} 
+                        handleChangePage={()=>{}} 
+                        handleChangeRowsPerPage={()=>{}} />
       </Table>
     )
   }

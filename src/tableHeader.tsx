@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 export type Props = { data: string }
 
-export default class TableHeader extends Component<Props> {
+export default class MuiTableHeader extends Component<Props> {
   render() {
     const {
       data
@@ -20,7 +20,7 @@ export default class TableHeader extends Component<Props> {
         <TableHead>
           <TableRow>
             <TableCell>
-              Temp Data
+              {data}
             </TableCell>
           </TableRow>
         </TableHead>
