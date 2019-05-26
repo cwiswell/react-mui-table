@@ -7,7 +7,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 //import styles from './styles.css'
 
-export type Props = { data: string }
+export type Props = { data: any }
 
 export default class MuiTableHeader extends Component<Props> {
   render() {
