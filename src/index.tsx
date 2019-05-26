@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Fragment, Component} from 'react';
 
 import Table from '@material-ui/core/Table';
-import MuiTableHeader from './tableHeader';
-import MuiTableFooter from './tableFooter';
-import MuiTableBody from './tableBody';
+import MuiTableHeader from './table-header';
+import MuiTableFooter from './table-footer';
+import MuiTableBody from './table-body';
 
 export type Props = {
   dense: boolean,
