@@ -20,7 +20,7 @@ import MyComponent from 'react-mui-table'
 class Example extends React.Component {
   render () {
     return (
-      <MyComponent />
+      <MuiTable />
     )
   }
 }

@@ -1,38 +1,33 @@
-import * as React from 'react'
+import * as React from 'react';
+import { Fragment, Component} from 'react';
 
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import MuiTableHeader from './table-header';
+import MuiTableFooter from './table-footer';
+import MuiTableBody from './table-body';
 
-//import styles from './styles.css'
+export type Props = {
+  dense: boolean,
+  data: Array<any>
+}
 
-export type Props = { data: string }
-
-export default class MuiTable extends React.Component<Props> {
+export default class MuiTable extends Component<Props> {
   render() {
     const {
-      data
+      data,
+      dense
     } = this.props
 
     return (
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>
-              Temp Data
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-            <TableRow>
-              <TableCell>
-                {data}
-              </TableCell>
-            </TableRow>
-        </TableBody>
-      </Table>
+      <Fragment>
+        <Table {...(dense ? {padding:"dense"} : {})}>
+          <MuiTableHeader data={"data"} />
+          <MuiTableBody data={data} />
+          <MuiTableFooter count={data.length} rowsPerPage={30} currentPage={1}
+            handleChangePage={() => { }}
+            handleChangeRowsPerPage={() => { }} />
+        </Table>
+      </Fragment>
     )
   }
 }
