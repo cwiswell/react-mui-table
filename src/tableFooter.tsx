@@ -5,8 +5,6 @@ import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 
-//import styles from './styles.css'
-
 export type Props = { 
     count: number ,
     rowsPerPage: number,

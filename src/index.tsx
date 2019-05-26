@@ -6,8 +6,6 @@ import MuiTableHeader from './tableHeader';
 import MuiTableFooter from './tableFooter';
 import MuiTableBody from './tableBody';
 
-//import styles from './styles.css'
-
 export type Props = {
   dense: boolean,
   data: Array<any>

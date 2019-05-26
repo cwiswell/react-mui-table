@@ -14,7 +14,9 @@ export type Props = {
 export default class MuiTableBody extends Component<Props> {
 
     _renderCells: any = (item: Object) => {
-        return Object.keys(item).forEach(property =>{return (<TableCell>{item[property]} </TableCell>)});
+        let cells: Array<any> = new Array<any>();
+        Object.keys(item).forEach(property =>{cells.push((<TableCell key={property}>{item[property]} </TableCell>))});
+        return cells;
     }
 
     _renderRows: any = () => {
