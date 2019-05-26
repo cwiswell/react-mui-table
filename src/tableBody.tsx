@@ -11,19 +11,27 @@ export type Props = {
   data: Array<any>
 }
 
-export default class MuiTable extends Component<Props> {
-  render() {
-    const {
-      data
-    } = this.props
+export default class MuiTableBody extends Component<Props> {
 
+    _renderCells: any = (item: Object) => {
+        return Object.keys(item).forEach(property =>{return (<TableCell>{item[property]} </TableCell>)});
+    }
+
+    _renderRows: any = () => {
+        return this.props.data.map((item, key) =>{
+            var cells = this._renderCells(item);
+            return (<TableRow key={key}>
+                {cells}
+             </TableRow>)}
+        ); 
+    }
+
+  render() {        
+    let rows = this._renderRows();
     return (
       <Fragment>
           <TableBody>
-            <TableRow>
-              <TableCell>{data}
-              </TableCell>
-            </TableRow>
+              {rows}
           </TableBody>
       </Fragment>
     )

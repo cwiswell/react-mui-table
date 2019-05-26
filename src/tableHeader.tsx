@@ -22,6 +22,9 @@ export default class MuiTableHeader extends Component<Props> {
             <TableCell>
               {data}
             </TableCell>
+            <TableCell>
+              {data}
+            </TableCell>
           </TableRow>
         </TableHead>
       </Fragment>
