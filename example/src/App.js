@@ -13,9 +13,14 @@ export default class App extends Component {
         {col1: "data6", col2: "data128"}
       ];
 
+    let options = [
+      {displayName: "test 1", fieldName: "col1", visible: true},
+      {displayName: "test 2", fieldName: "col1", visible: true}
+    ]
+
     return (
       <div>
-        <MuiTable data={exampleData} dense={true} />
+        <MuiTable data={exampleData} dense={true} headerOptions={options} />
       </div>
     )
   }
