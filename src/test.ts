@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import MuiTable from './index'
 
-describe('ExampleComponent', () => {
+describe('MuiTable', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(MuiTable).toBeTruthy();
   })
 })
