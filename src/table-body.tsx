@@ -1,41 +1,40 @@
 import * as React from 'react';
-import { Fragment, Component} from 'react';
+import { Fragment } from 'react';
 
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-//import styles from './styles.css'
-
-export type Props = {
+type TableBodyProps = {
   data: Array<any>
 }
 
-export default class MuiTableBody extends Component<Props> {
+const MuiTableBody: React.FC<TableBodyProps> = (props) => {
 
-    _renderCells: any = (item: Object) => {
+    const _renderCells: any = (item: Object) => {
         let cells: Array<any> = new Array<any>();
         Object.keys(item).forEach(property =>{cells.push((<TableCell key={property}>{item[property]} </TableCell>))});
         return cells;
-    }
+    };
 
-    _renderRows: any = () => {
-        return this.props.data.map((item, key) =>{
-            var cells = this._renderCells(item);
+    const _renderRows: any = () => {
+        return props.data.map((item, key) =>{
+            var cells = _renderCells(item);
             return (<TableRow key={key}>
                 {cells}
              </TableRow>)}
         ); 
-    }
+    };
 
-  render() {        
-    let rows = this._renderRows();
+    let rows = _renderRows();
+
     return (
       <Fragment>
           <TableBody>
               {rows}
           </TableBody>
       </Fragment>
-    )
-  }
+    );  
 }
+
+export default MuiTableBody;
